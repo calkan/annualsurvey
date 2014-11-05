@@ -1,0 +1,667 @@
+\documentclass[12pt]{article}
+
+%\documentclass{article}
+%\documentclass[12pt]{article}%
+% last revision:
+\def\mydate{2005-06-09 13:58:03 brd}
+
+
+%%%%%%% Two column control
+\newif\ifdotwocol
+\dotwocoltrue   % two col 
+%\dotwocolfalse   % one col
+
+\long\def\twocol#1#2{\ifdotwocol{#1}\else{#2}\fi}
+%%%%%%%
+
+\def\mybeforeequation{\footnotesize}
+%\def\mybeforeequation{\small}
+%\def\mybeforeequation{}
+
+\def\myafterequation{\renewcommand\baselinestretch{1.1}}
+%\def\myafterequation{}
+
+%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%
+
+\def\citeusmark{$^{\textstyle \star}$}
+\def\citeus#1#2{\cite{#1}}
+
+\def\crow#1#2{#2}
+
+%\usepackage{denselists}
+\usepackage{fullpage}
+\usepackage[dvips]{graphicx}
+\usepackage{color}
+\usepackage{boxedminipage}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{url}
+%\usepackage{times}
+\usepackage{subfigure}
+%\usepackage{nih}		% PHS 398 Forms
+%\usepackage{nihblank}		% For printing on Blank PHS 398 Forms
+%\usepackage{confidential}
+\usepackage{multirow}
+\usepackage[utf8]{inputenc}
+%Note from brd
+\long\def\todo#1{{\bf{To do:}} #1}
+%\long\def\todo#1{}
+\usepackage{enumitem}
+\usepackage{enumerate}
+\long\def\squeezable#1{#1}
+
+%\def\a5{$\alpha_{_5}$
+
+\def\a5{5}
+
+%\def\mycaptionsize{\normalsize}
+%\def\mycaptionsize{\small}
+%\def\mycaptionsize{\small}
+\def\mycaptionsize{\footnotesize}
+\def\mycodesize{\footnotesize}
+\def\myeqnsize{\small}
+
+\def\sheading#1{{\bf #1:}\ }
+\def\sheading#1{\subsubsection{#1}}
+%\def\sheading#1{\bigskip {\bf #1.}}
+
+\def\ssheading#1{\noindent {\bf #1.}\ } 
+
+\newtheorem{hypothesis}{Hypothesis}
+\long\def\hyp#1{\begin{hypothesis} #1 \end{hypothesis}}
+
+\def\cbk#1{[{\em #1}]}
+
+\def\R{\mathbb{R}}
+\def\midv{\mathop{\,|\,}}
+\def\Fscr{\mathcal{F}}
+\def\Gscr{\mathcal{G}}
+\def\Sscr{\mathcal{S}}
+\def\set#1{{\{#1\}}}
+\def\edge{\!\rightarrow\!}
+\def\dedge{\!\leftrightarrow\!}
+\newcommand{\EOP}{\nolinebreak[1]~~~\hspace*{\fill} $\Box$\vspace*{\parskip}\vspace*{1ex}}
+%my way of doing starred references
+\newcommand{\mybibitem}[1]{\bibitem{#1} 
+\label{mybiblabel:#1}}
+\newcommand{\BC}{[}
+\newcommand{\EC}{]}
+\newcommand{\mycite}[1]{\ref{mybiblabel:#1}\nocite{#1}}
+\newcommand{\starcite}[1]{\ref{mybiblabel:#1}\citeusmark\nocite{#1}}
+
+
+\def\degree{$^\circ$}
+\def\R{\mathbb{R}}
+\def\Fscr{\mathcal{F}}
+\def\set#1{{\{#1\}}}
+\def\edge{\!\rightarrow\!}
+\def\dedge{\!\leftrightarrow\!}
+
+\long\def\gobble#1{}
+\def\Jigsaw{{\sc Jigsaw}}
+\def\ahelix{\ensuremath{\alpha}-helix}
+\def\ahelices{\ensuremath{\alpha}-helices}
+\def\ahelical{$\alpha$-helical}
+\def\bstrand{\ensuremath{\beta}-strand}
+\def\bstrands{\ensuremath{\beta}-strands}
+\def\bsheet{\ensuremath{\beta}-sheet}
+\def\bsheets{\ensuremath{\beta}-sheets}
+\def\hone{{\ensuremath{^1}\rm{H}}}
+\def\htwo{{$^{2}$H}}
+\def\cthir{{\ensuremath{^{13}}\rm{C}}}
+\def\nfif{{\ensuremath{^{15}}\rm{N}}}
+\def\hn{{\rm{H}\ensuremah{^\mathrm{N}}}}
+\def\hnone{{\textup{H}\ensuremath{^1_\mathrm{N}}}}
+\def\ca{{\rm{C}\ensuremath{^\alpha}}}
+\def\catwel{{\ensuremath{^{12}}\rm{C}\ensuremath{^\alpha}}}
+\def\ha{{\rm{H}\ensuremath{^\alpha}}}
+\def\cb{{\rm{C}\ensuremath{^\beta}}}
+\def\hb{{\rm{H}\ensuremath{^\beta}}}
+\def\hg{{\rm{H}\ensuremath{^\gamma}}}
+\def\dnn{{\ensuremath{d_{\mathrm{NN}}}}}
+\def\dan{{\ensuremath{d_{\alpha \mathrm{N}}}}}
+\def\jconst{{\ensuremath{^{3}\mathrm{J}_{\mathrm{H}^{\mathrm{N}}\mathrm{H}^{\alpha}}}} }
+\def\cbfb{{CBF-$\beta$}}
+
+\newtheorem{defn}{Definition}
+\newtheorem{claim}{Claim}
+
+    \gobble{
+    \psfrag{CO}[][]{\colorbox{white}{C}}
+    \psfrag{OO}[][]{\colorbox{white}{O}}
+    \psfrag{CA}[][]{\colorbox{white}{\ca}}
+    \psfrag{HA}[][]{\colorbox{white}{\ha}}
+    \psfrag{CB}[][]{\colorbox{white}{\cb}}
+    \psfrag{HB}[][]{\colorbox{white}{\hb}}
+    \psfrag{HN}[][]{\colorbox{white}{\hn}}
+    \psfrag{N15}[][]{\colorbox{white}{\nfif}}
+    \psfrag{dnn}[][]{\dnn}
+    \psfrag{dan}[][]{\dan}
+    \psfrag{phi}[][]{$\phi$}
+    }
+
+\newenvironment{closeenumerate}{\begin{list}{\arabic{enumi}.}{\topsep=0in\itemsep=0in\parsep=0in\usecounter{enumi}}}{\end{list}}
+
+%\newenvironment{closeitemize}{\begin{list}{\topsep=0in\itemsep=0in\parsep=0in}}{\end{list}}
+
+\newenvironment{closeitemize}%
+               {\begin{itemize}%
+                   \setlength{\itemsep}{0pt}%
+                   \setlength{\parskip}{0pt}}%
+               {\end{itemize}}
+
+
+\def\CR{\hspace{0pt}}           % ``invisible'' space for line break
+
+
+
+\newif\ifdbspacing
+%\dbspacingtrue  % For double spacing
+\dbspacingfalse  % For normal spacing
+
+\ifdbspacing
+ \doublespacing
+ \newcommand{\capspacing}{\doublespace\mycaptionsize}
+\else
+ \newcommand{\capspacing}{\mycaptionsize}
+\fi
+
+\def\rulefigure{\smallskip\hrule}
+
+% \def\codesize{\normalsize}
+\def\codesize{\small}
+
+% Can use macros \be, \ee, \en as shortcuts
+%  for \begin{enumerate}, \end{enumerate}, \item
+%  respectively.
+
+\def\be{\begin{enumerate}}   % Begin Enumerate
+\def\ee{\end{enumerate}}     % End Enumerate
+\def\en{\item}               % ENtry (item)
+\def\bi{\begin{itemize}}     % Begin Itemize
+\def\ei{\end{itemize}}       % End Itemize
+\def\bv{\begin{verbatim}}    % Begin Verbatim
+\def\ev{\end{verbatim}}      % End Verbatim
+
+\def\matlab{{\sc matlab} }
+\def\amber{{\sc amber} }
+\def\KS{{$K^*$}}
+\def\KSM{{K^*}} % K-Star Math
+\def\KSTM{{\tilde{K}^*}}  % K-Star Tilde Math (appx K*)
+\def\KOP{{$K^{\dagger}_{o}$}}  % K-Star Optimal partial
+\def\KOPM{{K^{\dagger}_{o}}}  % K-Star Optimal partial Math
+\def\KP{{$K^{\dagger}$}}  % K-Star partial
+\def\KPM{{K^{\dagger}}}  % K-Star partial Math
+\def\KTPM{{\tilde{K}^{\dagger}}}  % K-Star Tilde partial Math
+\def\KD{{$K_{_D}$}}
+\def\KA{{$K_{_A}$}}
+\def\qpM{{q_{_P}}}
+\def\qlM{{q_{_L}}}
+\def\qplM{{q_{_{PL}}}}
+\def\qSplM{{q^*_{_{PL}}}}
+\def\KSO{{$K^*_{o}$}} % K-Star Optimal
+\def\KSOM{{K^*_{o}}}  % K-Star Optimal Math
+\def\CBFB{{CBF-$\beta$}}   % Core binding factor beta
+\def\argmin{\mathop{\mathrm{argmin}}}
+\def\rhl#1{{\em \underline{RYAN}: *\{{#1}\}*}}
+\def\set#1{{\left\{ #1 \right\}}}
+\def\Escr{{\mathcal{E}}}
+\def\Jscr{{\mathcal{J}}}
+\def\Kscr{{\mathcal{K}}}
+\def\th{{$^{{\mathrm{th}}}$}}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+
+
+\newcommand{\junk}[1]{}
+\newcommand\LastYear{%
+  \advance\year by -1 \the\year\advance\year by 1}
+
+\def\thesection{\Alph{section}}
+
+%\textheight 9.0in 
+
+%\addtolength{\footheight}{-20pt}
+%\bibliographystyle{plos}
+
+
+\usepackage{arial}
+
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\begin{center}
+\large {\bf Bilkent University} \\ \null 
+
+\Large {\bf ANNUAL FACULTY SURVEY} \\ \null 
+
+ {\bf January 1, \the\year - December 31, \the\year} \\ \null 
+\end{center}
+
+\begin{tabular}{|l|l|}
+  \hline
+  {\bf Name} & {\bf } \\
+  \hline
+  {\bf Department or Program} & {\bf } \\
+  \hline
+  {\bf Faculty or School} & {\bf } \\
+  \hline
+  {\bf Current Academic Rank} & {\bf } \\
+  \hline
+  {\bf Highest Degree Earned, School, Year} & {\bf } \\
+  \hline
+\end{tabular}
+
+\clearpage
+
+\section*{A. RESEARCH, SCHOLARLY AND ARTISTIC ACTIVITIES}
+
+\subsection*{A.1. Scholarly Publications in \the\year}
+
+%BOX A.1.
+% i. List only the publications with Bilkent affiliation.  
+% ii. Report both the articles that are published and those that have been accepted, as documented by definite and final acceptance letters from journals. Report only the published books and book chapters.  
+% iii. While listing the publications, write the names of the authors in the order they appear on the publications.
+% iv. Indicate if the publication is/will be a reprint or an adapted version of a previous publication. 
+% v. Enclose relevant documentation (except for papers in conference proceedings):  
+%  v.1. copies of your published and accepted articles (enclose camera-ready proofs or galley proofs, if at that stage)
+%  v.2. for forthcoming journal articles: copies of definite acceptance letters from the journal, indicating final rather than conditional acceptance. 
+%  v.3. for published books, edited volumes, and chapters in books: 
+%     v.3.1. copy of the contents and the cover pages indicating editor(s), publisher, place and date of publication; 
+%     v.3.2.  copy of the “contributors’ notes” section  indicating the author’s Bilkent affiliation; 
+%     v.3.3.  copy of the first section of the book (preface or foreword or acknowledgements or  introduction);
+%     v.3.4. if the book is edited:
+%             v.3.4.1. a note from you explaining the review and selection process and thus clarifying what differentiates this book from a conference (or symposium/workshop/lecture/congress) proceedings; and   
+%                v.3.4.2. the names and affiliations of the authors of the other chapters. 
+
+\subsubsection*{A.1.a. Books, textbooks, scholarly monographs written by the faculty member}
+
+%Format: Author, Co-authors, if applicable, Title of Book, Number of pages, Place of Publication, Publisher, Year.
+%Example: F. Mann, The Social Role of the Person of Knowledge, 196 pp., Lexington, MA: Lexington Books, 2014.
+
+\begin{enumerate}[i)]
+\item Published  %(attach a copy of the cover and contents pages of each manuscript – see v.4 in box A.1 above)
+\end{enumerate}
+
+
+\subsubsection*{A.1.b. Volumes (books, anthologies, collections, bibliographies) edited by the faculty member (excluding conference proceedings)}
+
+%Format: First Editor, Second Editor, Title of Edited Book,  Number of pages, Place of Publication, Pub%lisher, Year.
+%Example: C.O. Smith, M. Aktan, Current Research in Microbial Ecology, 345 pp., San Francisco: American Association for Microbial Ecology, 2014. 
+
+\begin{enumerate}[i)]
+\item Published 
+%(attach a copy of the cover and contents pages of each manuscript – see v.4 in box A.1 above)
+\end{enumerate}
+
+\subsubsection*{A.1.c. Articles in refereed journals listed by ISI Citation Indices (SCI, SSCI, A\&HCI)}
+
+%Please refer to http://www.bilkent.edu.tr/~provost/jourlist/journal.htm 
+%
+%Format: First Author, Second Author, Third Author, etc., “Title of article,” Title of Journal, Volume, No, Pages, Year.
+%Example: I.W. Jones, L. Corwin, “Correlation in Power Residue Generated Random Numbers,” Journal of Computational 
+%	Physics, vol. 12, no. 6, 373-382, 2014.
+
+\begin{enumerate}[i)]
+\item Published %(attach copies of each of the manuscripts – see v.1 in box A.1 above)
+
+\item Accepted %(attach copies of each of the manuscripts and the acceptance letters - see v.1 and v.2 in box A.1 above)
+\end{enumerate}
+
+\subsubsection*{A.1.d. Articles in refereed journals NOT listed by ISI Citation Indices (that is, not listed by SCI, SSCI or A\&HCI)}
+%Use same format as above.
+ 
+\begin{enumerate}[i)]
+\item  Published %(attach copies of each of the manuscripts – see v.1 in box A.1 above)
+
+\item  Accepted %(attach copies of each of the manuscripts and the acceptance letters - see v.1. and v.2 in box A.1 above)
+\end{enumerate}
+
+\subsubsection*{A.1.e. Chapters in books or monographs excluding conference proceedings}
+%Format: First Author, Second Author, "Title of chapter" in Title of book, Editors, Pages, Place of Publication, Publisher, Year.
+%Example: P. Bayar, “Historical Development of the Soviet Theory of Self-Regulation” in The Development of 
+%Self-Regulation Through Private Speech, (Edited by Gail Aiving). pp. 51-77, New York: John Wiley & Sons, 2014.
+
+\begin{enumerate}[i)]
+\item Published %(attach copies of each of the manuscripts – see v.4. in box A.1 above)
+\end{enumerate}
+
+\subsubsection*{A.1.f. Book reviews, theater reviews, editorials}
+
+%Format: First Author, etc., “Title of book reviewed,” Author(s) of book reviewed, Place, publisher, date, and total number of pages of the book reviewed, Title of Journal, Volume, No, Pages, Year.
+%Example: A. Tasar, "International Migration," by T. Mayer, Oxford: Oxford University Press, 390 pp., 2000, International Interactions, Vol. 28, No.8, 355-357, 2014                              
+
+\subsubsection*{A.1.g. Reprints or Translations of Previous or Concurrent Publications}
+
+%Indicate reprints or translations of previously or concurrently published articles. These can be exact reprints, adaptations or translations which are now being republished in a book, volume, or a journal.  
+%Use the same format as a.-e. above.
+
+\subsubsection*{A.1.h. Conference papers with proceedings (Do not enclose copies of these papers)}
+
+%List the papers that were presented at conferences and published in the proceedings. 
+%Format: First Author, Second Author, etc., “Title of Conference Paper” in the proceedings of the (conference name), 
+%Pages, City, Country, Date of conference.
+%Example: O. Aksu, M. Cardoza, “Distribution of Sequential Computations,” in the Proceedings of the Second 
+%International Symposium On Computer and Information Sciences, 226-239, Istanbul, Turkey, 19-21 October 2014.
+
+\subsection*{A.2. Scholarly Work in Progress (e.g. submitted, under revision)}
+%List work that is ongoing or has been submitted. Indicate the title of the work, author(s), intended journal or publisher and date of submission, if applicable.
+
+\subsection*{A.3. Citations Received in \LastYear ~to Previously Published Articles}
+%Attach printed citation index report. Obtain this report from ISI's Web of Science (See instructions at http://www.provost.bilkent.edu.tr/forms/AFS.htm.) 
+%Note that some of your 2013 citations may appear in the 2014 index reports. 
+%Enclose documentation for citations in publications other than citation index journals.
+%Highlight or underline your own citations on the printed report.
+
+\subsubsection*{A.3.a. Citations to your scholarly work (articles, chapters, books, etc.) by others}
+%Make sure that you exclude the citations in conference proceedings that are listed in Conference Proceedings Citation Indices. That is, unclick the relevant boxes as indicated below: 
+
+\begin{enumerate}[i)]
+
+\item  Number of citations in citation index journals:	
+\item Number of citations in other publications (books, chapters):	
+
+\end{enumerate}
+
+\subsubsection*{A.3.b. Number of self citations:}
+
+\subsection*{A.4. Art Works, Competitions, Prizes}
+
+%BOX A.4.
+%i. List only the art works with Bilkent affiliation.  
+%ii. Report both the works that were exhibited and those that have been firmly scheduled, as documented by definite commitment letters from the organizers.  
+%iii. Enclose relevant documentation, such as:  
+%Photocopies from exhibit brochures, announcements, gallery publications, catalogues, reviews, websites, CD covers, or any other information about the work itself.
+%Documentation and/or information concerning the organization and setting of the event: the site the work was shown; the organizer, curator, jury, and sponsor;  other artists who exhibited at that site recently;  the participation and selection process; any other information indicating the reputation of the art gallery/curator/organization, and the like. 
+%If you won a prize in a competition, enclose the letter about the result of that competition and the prize you won. Also attach information about the organization, the jury, and the selection/refereeing process. 
+
+%List art works, competitions, prizes, etc., characterizing each listing by the type of visual art (e.g. sculpture, painting, installation, graphic design, film, audiovisual production, performance art) or prize won in a competition. (attach relevant documents – see iii. in Box A.4 above)
+
+%Format: Type of exhibit, number of artists (solo, 2-person, group, etc.), title, starting and ending dates, the work was performed,  sponsoring institution/person/foundation (if applicable), curator (if applicable), city, country.
+%Example: Graphic design, Solo, “Studies in Space and Shape,” Sept. 2014, XYZ Exhibition Hall, ABC Foundation, Koln, Germany. 
+
+\subsection*{A.5. Artistic Performances, Competitions, Prizes}
+
+%BOX A.5.
+%i. List only the performances with Bilkent affiliation.  
+%ii. Report both the works that were performed and those that have been firmly scheduled, as documented by definite commitment letters from the organizers.  
+%iii. Enclose relevant documentation, such as:  
+%Photocopies from brochures, announcements, programmes, catalogues, reviews, websites, CD covers, or any other information about the work itself.
+%Documentation and/or information concerning the organization and setting of the event: the site the work was performed; the organizer or sponsor;  other artists who performed at that site recently;  the participation and selection process; any other information indicating the reputation of the organization/concert hall, and the like. 
+%If you won a prize in a competition, enclose the letter about the result of that competition and the prize you won. Also attach information about the organization, the jury, and the selection/refereeing process.
+
+%List artistic performances, competitions, prizes, and the like., characterizing each listing by the type of performance (e.g., concert, recital, poetry reading, dramatic role) or prize won in a competition. (attach relevant documents – see iii. in Box A.5 above)
+
+%Format: Type of performance, title (if applicable), date(s), the work was performed, where and by whom reviewed (if applicable), city, country.
+%Example: Piano recital, March 30, 2014, XYZ Symphony Hall, Berlin, Germany.
+
+\subsection*{A.6. Published or aired reviews/critiques of art works or performances}
+%List your work or performance which was reviewed by respectable art, music, or theatre critics and appeared in art-related media or journals. Please attach the review and provide information about the art critic and the source.   
+%Format: “Title” of review, reviewer, reviewed work, source, date. 
+%Example:  “What Happened to Space?” H. Kroeber, critique of “Studies in Space and Shape” exhibit, Contemporary Arts, 21.05. 2014
+
+\subsection*{A.7. Patents}
+%List patents received in your name.
+
+%Format: “Title,” country which issued the patent, patent number, date, co-owners of patent, if any.
+%Example: “Non-reciprocal Wave-Translating Device,” U.S.A., US Patent No. 3-452304, June, 2014.
+
+\subsection*{A.8. Seminars, Workshops and Lectures}
+%List the seminars, workshops and lectures given at other universities, companies, or organizations. Please indicate if you have received any monetary support from the organizing institution.
+
+%Format: “Seminar/Lecture Title,” date, place, monetary support, if any.
+
+\subsection*{A.9. Presentations Given at Conferences}
+%List presentations given at conferences (which were not published).
+
+%Format: First presenter, etc., “Title of Presentation,” conference name, city, country, date of conference.
+
+\subsection*{A.10. Services to the Field (Academic or Arts)}
+%List the editorial and reviewing services you rendered to your academic or arts community and any offices held in scholarly and professional societies. 
+
+\subsubsection*{A.10.a. Editorships and Editorial Boards of Scholarly Journals}
+%List the services you rendered in an editorial capacity (e.g. editor, associate editor, managing editor, and the like.) of a scholarly or professional journal. Also include memberships and services as Editorial Reviewer on Editorial Boards.
+
+%Format: Date of appointment or election, date of termination (if applicable), editorial title, name of journal, publication sponsor.
+%Example: March 2014 - , Associate Editor, Computer Graphics, IEEE. 
+
+\subsubsection*{A.10.b. Refereeing for Scholarly and Professional Journals}
+%List the scholarly or professional journals for which you served as a referee.
+%Format: Date, Name of journal.
+
+\subsubsection*{A.10.c. Offices Held in Scholarly and Professional Societies}
+%List any offices held in scholarly and professional societies.
+%Format: Name of organization or society, title held, start date of appointment or election, expiration date (if in progress, indicate).
+
+\subsubsection*{A.10.d. Refereeing for Arts Events and Competitions}
+%List the services you rendered to the arts community in a refereeing and selection capacity (e.g. curator, juror for a competition, etc.). 
+
+%Format: Date of appointment or election, date of termination (if applicable), title, name of event/competition, sponsor/organizer.
+%Example: March – June 2014, Jury member for the International Youth Competition for Graphic Design, XYZ organization. 
+
+\subsection*{A.11. Sponsored Research}
+%List any research activities sponsored by a body other than the University.
+
+%Format: “Title of project,” sponsoring agency or company, your duty, period, total amount of grant.
+%Example: “Conducting a Consumer Survey on Car Problems,” Marshal Motors Co., Principal Investigator, December 2004 - August 2014, US$10,000.
+
+\subsection*{A.12. Professional Awards and Honors}
+%List the academic honors and prizes; appointments to national and international academic boards, councils, or panels, academic degrees and other awards that are comparable indices of professional accomplishments that you received.
+
+%Format: Name of award or honor, awarding agency/organization/foundation, date, basis for the award.
+%Example: Science Award in Physics, TÜBITAK, 2014, scientific publications.
+
+\subsection*{A.13. Other Activities}
+%List any other research, scholarly and artistic activities not described elsewhere in this section.
+
+
+
+\section*{B. TEACHING/ ADVISING/ INSTRUCTIONAL DEVELOPMENT ACTIVITIES}
+
+%THE FOLLOWING WILL BE USED BY THE CHAIRS AND THE DEANS/DIRECTORS
+% IN EVALUATING THE TEACHING PERFORMANCE OF FACULTY MEMBERS.
+
+\subsection*{B.1. Course(s) Offered in \the\year}
+%The online syllabi for courses you have taught provide valuable information about your teaching activities in 2014.  Please verify that this information is accurate and complete. 
+
+%Please ONLY submit information not covered in your online syllabi:
+%       Provide information on a) to c) below for each and every course taught in 2014. List a) to c) separately under each course.  
+
+%a)  List and briefly describe each and every assessment you used and its contribution to the course grade:
+%e.g. one open-book final exam including two short essay questions and one short case (25% of the grade); 
+ %     5 online quizzes - best five out of six (25% of the grade); 
+ %     2 cases analyzed and reported in groups of five (15% of the grade); 
+ %     1 project carried out and reported in groups of five (35% of the grade) – formulating a strategic plan for an organization   and doing the necessary research and analysis as well as applying the course material for that purpose.
+
+%b) Did you teach this course for the first time or not?  
+%First time (new preparation) _______   		Taught previously______ 
+
+%c) If you offered this course previously, did you introduce and/or produce significantly NEW instructional material? If you did, describe briefly. 
+
+\begin{enumerate}
+  \item CS...
+    \begin{enumerate}[a)]
+    \item  List and briefly describe each and every assessment you used and its contribution to the course grade:
+    \item Did you teach this course for the first time or not? \\
+      First time (new preparation) \line(1,0){50}  ~~~Taught previously \line(1,0){50}
+    \item If you offered this course previously, did you introduce and/or produce significantly NEW instructional material? If you did, describe briefly. 
+    \end{enumerate}
+  \item CS...
+    \begin{enumerate}[a)]
+    \item  List and briefly describe each and every assessment you used and its contribution to the course grade:
+    \item Did you teach this course for the first time or not? \\
+      First time (new preparation) \line(1,0){50}  ~~~Taught previously \line(1,0){50}
+    \item If you offered this course previously, did you introduce and/or produce significantly NEW instructional material? If you did, describe briefly. 
+    \end{enumerate}
+  \item CS...
+    \begin{enumerate}[a)]
+    \item  List and briefly describe each and every assessment you used and its contribution to the course grade:
+    \item Did you teach this course for the first time or not? \\
+      First time (new preparation) \line(1,0){50}  ~~~Taught previously \line(1,0){50}
+    \item If you offered this course previously, did you introduce and/or produce significantly NEW instructional material? If you did, describe briefly. 
+    \end{enumerate}
+  \item CS...
+    \begin{enumerate}[a)]
+    \item  List and briefly describe each and every assessment you used and its contribution to the course grade:
+    \item Did you teach this course for the first time or not? \\
+      First time (new preparation) \line(1,0){50}  ~~~Taught previously \line(1,0){50}
+    \item If you offered this course previously, did you introduce and/or produce significantly NEW instructional material? If you did, describe briefly. 
+    \end{enumerate}
+\end{enumerate}
+
+\subsection*{B.2. New teaching approaches and methods}
+%Describe any new approaches and/or methods of teaching and assessment that you have used in the past year. What evidence do you have that this new approach was successful in enhancing student learning (e.g. results from student feedback, improved quality of student assignments and/or exam performance/improvement in student participation)?
+
+\paragraph{New instructional methods and/or approaches:}
+
+\paragraph{New assessment methods and/or approaches:}
+
+\subsection*{B.3. Educational development activities}
+%List any development activities related to your teaching that you have participated in or undertaken in the past year (e.g. workshops on   university teaching and learning, working with colleagues on improvement of teaching - for example, review of a colleague’s syllabus and course materials).
+
+\subsection*{B.4. Student Contact Hours}
+%       Indicate the number of hours per week spent in class
+
+\subsection*{B.5. Undergraduate Student Industrial Training or Senior/Term Project Supervision}
+%List the students whom you supervised in 2014 and their project topics.
+
+%Format: Name of the student(s), project type (Industrial/Senior/Term/other), "Topic/Name of project", status (i.e. completed or in progress), date of completion (expected date if in progress).
+
+\subsection*{B.6. Undergraduate Student Advising}
+%Indicate the number of students of whom you were the academic advisor during 2014.
+
+%Format: Total number of students, number of students grouped by year (e.g. 1st year - 15, 2nd year - 20), brief explanation of activities carried out. 
+
+\subsection*{B.7. Graduate Student Supervision{
+%List the graduate students whom you supervised during the period and their research topics.
+
+%Format: Name of student, degree, “Title of thesis,” period of supervision, (expected) graduation date.
+%Example: Mark Kohlman, M.S., “Design and Implementation of Multi-purpose MCIS Machines,” September 2005 - June 2014, expected graduation 2014.
+
+\subsection*{B.8. Students’ Accomplishments}
+%List awards, honors, publications, exhibits, performances and other noteworthy accomplishments of students you personally guided and supervised.
+
+\subsection*{B.9. Other Teaching-Related Activities}
+%	List any other teaching-related activities you were involved in at the department, Faculty, or university-wide level. 
+
+
+\section*{C. SERVICES FOR THE DEPARTMENT / FACULTY / SCHOOL / UNIVERSITY}
+
+\subsection*{C.1. Committees/Work Groups Involved}
+%Indicate the names of committees/work groups, responsibilities and activities undertaken, and whether completed or in progress.
+
+%Format: Name of the committee/group, duration (indicate if in progress), responsibilities and activities, brief explanation.
+
+\subsection*{C.2. Other Duties Assigned by the University or Activities Carried Out for the University}
+%List the duties/activities and whether completed or in progress.
+
+%Format: Name of duty/activity, duration (indicate if in progress), responsibilities and activities, brief explanation.
+
+
+\section*{D. SERVICES FOR THE COMMUNITY/SOCIETY}
+%	   List any service rendered and whether completed or in progress. 
+
+
+\section*{E. SELF-ASSESSMENT AND FUTURE GOALS}
+
+1. Evaluate your performance and achievements in the past year vis á vis your own goals. 
+
+2. Describe your goals pertaining to your work and your contributions to your department and the university in the next two years. 
+
+
+\section*{F. COMMENTS}
+
+%Indicate any comments, criticisms, suggestions, etc. concerning your department, faculty/school and university.
+
+
+
+\begin{center}
+\line(1,0){500}
+\end{center}
+{\large\textbf {\textit {Suggestions for Improvements to This Form}}}
+%Describe any changes to this form which you feel would improve its evaluative sensitivity and effectiveness.
+
+
+
+
+\section*{G. Addendum to the Annual Faculty Survey, \the\year.}
+%Please list below your scholarly publications in languages other than English. 
+
+\subsubsection*{G.1.a. Books, textbooks, scholarly monographs written by the faculty member}
+%Format: Author, Co-authors, if applicable, Title of Book, Number of pages, Place of Publication, Publisher, Year.
+%Example: F. Mann, The Social Role of the Person of Knowledge, 196 pp., Lexington, MA: Lexington Books, 2014.
+
+\begin{enumerate}[i)]
+\item Published  %(attach a copy of the cover and contents pages of each manuscript – see v.4 in box A.1 above)
+\end{enumerate}
+
+\subsubsection*{G.1.b. Volumes (books, anthologies, collections, bibliographies) edited by the faculty member (excluding conference proceedings)}
+
+%Format: First Editor, Second Editor, Title of Edited Book,  Number of pages, Place of Publication, Publisher, Year.
+%Example: C.O. Smith, M. Aktan, Current Research in Microbial Ecology, 345 pp., San Francisco: American Association for Microbial Ecology, 2014. 
+
+\begin{enumerate}[i)]
+\item Published  %(attach a copy of the cover and contents pages of each manuscript – see v.4 in box A.1 above)
+\end{enumerate}
+
+
+
+\subsubsection*{G.1.c. Articles in refereed journals listed by ISI Citation Indices (SCI, SSCI, A\&HCI)}
+%Please refer to http://www.bilkent.edu.tr/~provost/jourlist/journal.htm for the impact factors and half lives of the ISI journals.
+
+%Format: First Author, Second Author, Third Author, etc., “Title of article,” Title of Journal, Volume, No, Pages, Year.
+%Example: I.W. Jones, L. Corwin, “Correlation in Power Residue Generated Random Numbers,” Journal of Computational 
+%	Physics, vol. 12, no. 6, 373-382, 2014.
+
+\begin{enumerate}[i)]
+\item Published %(attach copies of each of the manuscripts – see v.1 in box A.1 above)
+
+\item Accepted %(attach copies of each of the manuscripts and the acceptance letters - see v.1 and v.2 in box A.1 above)
+\end{enumerate}
+
+\subsubsection*{G.1.d. Articles in refereed journals NOT listed by ISI Citation Indices (that is, not listed by SCI, SSCI or A\&HCI)}
+%Use same format as above.
+ 
+\begin{enumerate}[i)]
+\item  Published %(attach copies of each of the manuscripts – see v.1 in box A.1 above)
+
+\item  Accepted %(attach copies of each of the manuscripts and the acceptance letters - see v.1. and v.2 in box A.1 above)
+\end{enumerate}
+
+\subsubsection*{G.1.e. Chapters in books or monographs excluding conference proceedings}
+%Format: First Author, Second Author, "Title of chapter" in Title of book, Editors, Pages, Place of Publication, Publisher, Year.
+%Example: P. Bayar, “Historical Development of the Soviet Theory of Self-Regulation” in The Development of 
+%Self-Regulation Through Private Speech, (Edited by Gail Aiving). pp. 51-77, New York: John Wiley & Sons, 2014.
+
+\begin{enumerate}[i)]
+\item Published %(attach copies of each of the manuscripts – see v.4. in box A.1 above)
+\end{enumerate}
+
+
+\subsubsection*{G.1.f. Book reviews, theater reviews, editorials}
+%Format: First Author, etc., “Title of book reviewed,” Author(s) of book reviewed, Place, publisher, date, and total number of pages of the book reviewed, Title of Journal, Volume, No, Pages, Year.
+%Example: A. Tasar, "International Migration," by T. Mayer, Oxford: Oxford University Press, 390 pp., 2000, International Interactions, Vol. 28, No.8, 355-357, 2014.                              
+
+\subsubsection*{G.1.g. Reprints or Translations of Previous or Concurrent Publications}
+%Indicate reprints or translations of previously or concurrently published articles. These can be exact reprints, adaptations or translations which are now being republished in a book, volume, or a journal.  
+%Use the same format as a.-e. above.
+
+\subsubsection*{G.1.h. Conference papers with proceedings (Do not enclose copies of these papers)}
+%List the papers that were presented at conferences and published in the proceedings. 
+%Format: First Author, Second Author, etc., “Title of Conference Paper” in the proceedings of the (conference name), 
+%Pages, City, Country, Date of conference.
+%Example: O. Aksu, M. Cardoza, “Distribution of Sequential Computations,” in the Proceedings of the Second 
+%International Symposium On Computer and Information Sciences, 226-239, Istanbul, Turkey, 19-21 October 2014.
+
+\subsection*{G.2. Scholarly Work in Progress (e.g. submitted, under revision)}
+%List work that is ongoing or has been submitted. Indicate the title of the work, author(s), intended journal or publisher and date of submission, if applicable.
+
+
+
+\end{document}
+
+
