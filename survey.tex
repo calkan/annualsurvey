@@ -49,8 +49,15 @@
 
 \newcommand{\junk}[1]{}
 
+% this is how you use it:
 
-\newcommand\LastYear{% 
+\junk{
+  \section*{USELESS}
+  ....
+}
+
+
+\newcommand\LastYear{ % calculate the last year 
   \advance\year by -1 \the\year\advance\year by 1}
 
 \def\thesection{\Alph{section}}
