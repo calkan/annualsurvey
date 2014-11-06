@@ -21,6 +21,14 @@ int main(int argc, char **argv){
   
   prevti[0]=0;
 
+  if (argc!=3){
+    fprintf(stderr, "Citation Marker for the Annual Faculty Survey.\n\nUsage: %s <citations.txt> <mypubs.txt>\n\n", argv[0]);
+    fprintf(stderr, "\t<citations.txt>: List of citations downloaded as a text file from WoS.\n");
+    fprintf(stderr, "\t<mypubs.txt>   : List of own papers. See mypubs.txt in the git repo as an example.\n\n");
+    fprintf(stderr, "This program will halt when it finds a citation that doesn't match to at least one publication in the mypubs.txt file. If this happens. find the missing publication, add it to mypubs.txt file, and rerun.\n");
+    return -1;
+  }
+
   cite = fopen(argv[1], "r");
   pubs = fopen(argv[2], "r");
 
