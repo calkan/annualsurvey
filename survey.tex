@@ -1,135 +1,37 @@
 \documentclass[12pt]{article}
 
-
-%%%%%%% Two column control
-\newif\ifdotwocol
-\dotwocoltrue   % two col 
-%\dotwocolfalse   % one col
-
-\long\def\twocol#1#2{\ifdotwocol{#1}\else{#2}\fi}
-%%%%%%%
-
-\def\mybeforeequation{\footnotesize}
-%\def\mybeforeequation{\small}
-%\def\mybeforeequation{}
-
-\def\myafterequation{\renewcommand\baselinestretch{1.1}}
-%\def\myafterequation{}
-
-%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%
-
-\def\citeusmark{$^{\textstyle \star}$}
-\def\citeus#1#2{\cite{#1}}
-
-\def\crow#1#2{#2}
-
 \usepackage{fullpage}
-\usepackage[dvips]{graphicx}
-\usepackage{color}
-\usepackage{boxedminipage}
-\usepackage{amsfonts}
-\usepackage{amsmath}
 \usepackage{url}
 
-\usepackage{subfigure}
+%\usepackage{geometry}
+
+\usepackage[a4paper]{geometry}
+ \geometry{
+ a4paper,
+ total={210mm,297mm},
+ left=0.59in,
+ right=0.59in,
+ top=0.59in,
+ bottom=0.5in,
+ footskip=0.05in,
+ }
 
 \usepackage{multirow}
 \usepackage[utf8]{inputenc}
 
-\long\def\todo#1{{\bf{To do:}} #1}
-
-\usepackage{enumitem}
 \usepackage{enumerate}
-\long\def\squeezable#1{#1}
-
-
-\def\a5{5}
-
-\def\mycaptionsize{\footnotesize}
-\def\mycodesize{\footnotesize}
-\def\myeqnsize{\small}
+\usepackage{titlesec}
 
 \def\sheading#1{{\bf #1:}\ }
 \def\sheading#1{\subsubsection{#1}}
-
-
 \def\ssheading#1{\noindent {\bf #1.}\ } 
 
-\newtheorem{hypothesis}{Hypothesis}
-\long\def\hyp#1{\begin{hypothesis} #1 \end{hypothesis}}
 
-\def\cbk#1{[{\em #1}]}
-
-\def\R{\mathbb{R}}
-\def\midv{\mathop{\,|\,}}
-\def\Fscr{\mathcal{F}}
-\def\Gscr{\mathcal{G}}
-\def\Sscr{\mathcal{S}}
-\def\set#1{{\{#1\}}}
-\def\edge{\!\rightarrow\!}
-\def\dedge{\!\leftrightarrow\!}
-\newcommand{\EOP}{\nolinebreak[1]~~~\hspace*{\fill} $\Box$\vspace*{\parskip}\vspace*{1ex}}
-% my way of doing starred references
-\newcommand{\mybibitem}[1]{\bibitem{#1} 
-\label{mybiblabel:#1}}
-\newcommand{\BC}{[}
-\newcommand{\EC}{]}
-\newcommand{\mycite}[1]{\ref{mybiblabel:#1}\nocite{#1}}
-\newcommand{\starcite}[1]{\ref{mybiblabel:#1}\citeusmark\nocite{#1}}
-
-
-\def\degree{$^\circ$}
-\def\R{\mathbb{R}}
-\def\Fscr{\mathcal{F}}
-\def\set#1{{\{#1\}}}
-\def\edge{\!\rightarrow\!}
-\def\dedge{\!\leftrightarrow\!}
-
-\long\def\gobble#1{}
-\def\Jigsaw{{\sc Jigsaw}}
-\def\ahelix{\ensuremath{\alpha}-helix}
-\def\ahelices{\ensuremath{\alpha}-helices}
-\def\ahelical{$\alpha$-helical}
-\def\bstrand{\ensuremath{\beta}-strand}
-\def\bstrands{\ensuremath{\beta}-strands}
-\def\bsheet{\ensuremath{\beta}-sheet}
-\def\bsheets{\ensuremath{\beta}-sheets}
-\def\hone{{\ensuremath{^1}\rm{H}}}
-\def\htwo{{$^{2}$H}}
-\def\cthir{{\ensuremath{^{13}}\rm{C}}}
-\def\nfif{{\ensuremath{^{15}}\rm{N}}}
-\def\hn{{\rm{H}\ensuremah{^\mathrm{N}}}}
-\def\hnone{{\textup{H}\ensuremath{^1_\mathrm{N}}}}
-\def\ca{{\rm{C}\ensuremath{^\alpha}}}
-\def\catwel{{\ensuremath{^{12}}\rm{C}\ensuremath{^\alpha}}}
-\def\ha{{\rm{H}\ensuremath{^\alpha}}}
-\def\cb{{\rm{C}\ensuremath{^\beta}}}
-\def\hb{{\rm{H}\ensuremath{^\beta}}}
-\def\hg{{\rm{H}\ensuremath{^\gamma}}}
-\def\dnn{{\ensuremath{d_{\mathrm{NN}}}}}
-\def\dan{{\ensuremath{d_{\alpha \mathrm{N}}}}}
-\def\jconst{{\ensuremath{^{3}\mathrm{J}_{\mathrm{H}^{\mathrm{N}}\mathrm{H}^{\alpha}}}} }
-\def\cbfb{{CBF-$\beta$}}
-
-\newtheorem{defn}{Definition}
-\newtheorem{claim}{Claim}
-
-    \gobble{
-    \psfrag{CO}[][]{\colorbox{white}{C}}
-    \psfrag{OO}[][]{\colorbox{white}{O}}
-    \psfrag{CA}[][]{\colorbox{white}{\ca}}
-    \psfrag{HA}[][]{\colorbox{white}{\ha}}
-    \psfrag{CB}[][]{\colorbox{white}{\cb}}
-    \psfrag{HB}[][]{\colorbox{white}{\hb}}
-    \psfrag{HN}[][]{\colorbox{white}{\hn}}
-    \psfrag{N15}[][]{\colorbox{white}{\nfif}}
-    \psfrag{dnn}[][]{\dnn}
-    \psfrag{dan}[][]{\dan}
-    \psfrag{phi}[][]{$\phi$}
-    }
-
-\newenvironment{closeenumerate}{\begin{list}{\arabic{enumi}.}{\topsep=0in\itemsep=0in\parsep=0in\usecounter{enumi}}}{\end{list}}
+\newenvironment{closeenumerate}
+               {\begin{list}
+                   {\arabic{enumi}.}
+                   {\topsep=0in\itemsep=0in\parsep=0in\usecounter{enumi}}}
+               {\end{list}}
 
 
 \newenvironment{closeitemize}% 
@@ -143,71 +45,18 @@
 
 
 
-\newif\ifdbspacing
-
-\dbspacingfalse  %  For normal spacing
-
-\ifdbspacing
- \doublespacing
- \newcommand{\capspacing}{\doublespace\mycaptionsize}
-\else
- \newcommand{\capspacing}{\mycaptionsize}
-\fi
-
-\def\rulefigure{\smallskip\hrule}
-
-
-\def\codesize{\small}
-
-%  Can use macros \be, \ee, \en as shortcuts
-%   for \begin{enumerate}, \end{enumerate}, \item
-%   respectively.
-
-\def\be{\begin{enumerate}}   %  Begin Enumerate
-\def\ee{\end{enumerate}}     %  End Enumerate
-\def\en{\item}               %  ENtry (item)
-\def\bi{\begin{itemize}}     %  Begin Itemize
-\def\ei{\end{itemize}}       %  End Itemize
-\def\bv{\begin{verbatim}}    %  Begin Verbatim
-\def\ev{\end{verbatim}}      %  End Verbatim
-
-\def\matlab{{\sc matlab} }
-\def\amber{{\sc amber} }
-\def\KS{{$K^*$}}
-\def\KSM{{K^*}} %  K-Star Math
-\def\KSTM{{\tilde{K}^*}}  %  K-Star Tilde Math (appx K*)
-\def\KOP{{$K^{\dagger}_{o}$}}  %  K-Star Optimal partial
-\def\KOPM{{K^{\dagger}_{o}}}  %  K-Star Optimal partial Math
-\def\KP{{$K^{\dagger}$}}  %  K-Star partial
-\def\KPM{{K^{\dagger}}}  %  K-Star partial Math
-\def\KTPM{{\tilde{K}^{\dagger}}}  %  K-Star Tilde partial Math
-\def\KD{{$K_{_D}$}}
-\def\KA{{$K_{_A}$}}
-\def\qpM{{q_{_P}}}
-\def\qlM{{q_{_L}}}
-\def\qplM{{q_{_{PL}}}}
-\def\qSplM{{q^*_{_{PL}}}}
-\def\KSO{{$K^*_{o}$}} %  K-Star Optimal
-\def\KSOM{{K^*_{o}}}  %  K-Star Optimal Math
-\def\CBFB{{CBF-$\beta$}}   %  Core binding factor beta
-\def\argmin{\mathop{\mathrm{argmin}}}
-\def\rhl#1{{\em \underline{RYAN}: *\{{#1}\}*}}
-\def\set#1{{\left\{ #1 \right\}}}
-\def\Escr{{\mathcal{E}}}
-\def\Jscr{{\mathcal{J}}}
-\def\Kscr{{\mathcal{K}}}
-\def\th{{$^{{\mathrm{th}}}$}}
-
-\newtheorem{proposition}{Proposition}
-\newtheorem{lemma}{Lemma}
-
+% Use \junk{} to disable unused subsections
 
 \newcommand{\junk}[1]{}
+
+
 \newcommand\LastYear{% 
   \advance\year by -1 \the\year\advance\year by 1}
 
 \def\thesection{\Alph{section}}
 
+\titleformat{\section}
+  {\normalfont\fontsize{14}{15}\bfseries}{\thesection}{1em}{}
 
 \usepackage{arial}
 
@@ -221,8 +70,10 @@
 \Large {\bf ANNUAL FACULTY SURVEY} \\ \null 
 
  {\bf January 1, \the\year - December 31, \the\year} \\ \null 
+
 \end{center}
 
+\begin{center}
 \begin{tabular}{|l|l|}
   \hline
   {\bf Name} & {\bf } \\
@@ -236,6 +87,8 @@
   {\bf Highest Degree Earned, School, Year} & {\bf } \\
   \hline
 \end{tabular}
+
+\end{center}
 
 \clearpage
 
@@ -517,7 +370,7 @@
 
 % Format: Total number of students, number of students grouped by year (e.g. 1st year - 15, 2nd year - 20), brief explanation of activities carried out. 
 
-\subsection*{B.7. Graduate Student Supervision{
+\subsection*{B.7. Graduate Student Supervision}
 % List the graduate students whom you supervised during the period and their research topics.
 
 % Format: Name of student, degree, “Title of thesis,” period of supervision, (expected) graduation date.
@@ -561,13 +414,14 @@
 
 
 \begin{center}
-\line(1,0){500}
+\line(1,0){450}
 \end{center}
 {\large\textbf {\textit {Suggestions for Improvements to This Form}}}
 % Describe any changes to this form which you feel would improve its evaluative sensitivity and effectiveness.
 
 
 
+\clearpage
 
 \section*{G. Addendum to the Annual Faculty Survey, \the\year.}
 % Please list below your scholarly publications in languages other than English. 
