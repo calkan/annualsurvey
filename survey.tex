@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[10pt]{article}
 
 \usepackage{fullpage}
 \usepackage{url}
@@ -73,22 +73,7 @@
 
 \end{center}
 
-\begin{center}
-\begin{tabular}{|l|l|}
-  \hline
-  {\bf Name} & {\bf } \\
-  \hline
-  {\bf Department or Program} & {\bf } \\
-  \hline
-  {\bf Faculty or School} & {\bf } \\
-  \hline
-  {\bf Current Academic Rank} & {\bf } \\
-  \hline
-  {\bf Highest Degree Earned, School, Year} & {\bf } \\
-  \hline
-\end{tabular}
-
-\end{center}
+\input{sections/info.tex}
 
 \clearpage
 
@@ -114,76 +99,42 @@
 
 \subsubsection*{A.1.a. Books, textbooks, scholarly monographs written by the faculty member}
 
-% Format: Author, Co-authors, if applicable, Title of Book, Number of pages, Place of Publication, Publisher, Year.
-% Example: F. Mann, The Social Role of the Person of Knowledge, 196 pp., Lexington, MA: Lexington Books, 2014.
-
-\begin{enumerate}[i)]
-\item {\bf Published}  % (attach a copy of the cover and contents pages of each manuscript – see v.4 in box A.1 above)
-\end{enumerate}
-
+\input{sections/A_books.tex}
 
 \subsubsection*{A.1.b. Volumes (books, anthologies, collections, bibliographies) edited by the faculty member (excluding conference proceedings)}
 
-% Format: First Editor, Second Editor, Title of Edited Book,  Number of pages, Place of Publication, Pub% lisher, Year.
-% Example: C.O. Smith, M. Aktan, Current Research in Microbial Ecology, 345 pp., San Francisco: American Association for Microbial Ecology, 2014. 
+\input{sections/A_volumes.tex}
 
-\begin{enumerate}[i)]
-\item {\bf Published} 
-% (attach a copy of the cover and contents pages of each manuscript – see v.4 in box A.1 above)
-\end{enumerate}
 
 \subsubsection*{A.1.c. Articles in refereed journals listed by ISI Citation Indices (SCI, SSCI, A\&HCI)}
 
-% Please refer to http://www.bilkent.edu.tr/~provost/jourlist/journal.htm 
-% 
-% Format: First Author, Second Author, Third Author, etc., “Title of article,” Title of Journal, Volume, No, Pages, Year.
-% Example: I.W. Jones, L. Corwin, “Correlation in Power Residue Generated Random Numbers,” Journal of Computational 
-% 	Physics, vol. 12, no. 6, 373-382, 2014.
-
-\begin{enumerate}[i)]
-\item {\bf Published} % (attach copies of each of the manuscripts – see v.1 in box A.1 above)
-
-\item {\bf Accepted} % (attach copies of each of the manuscripts and the acceptance letters - see v.1 and v.2 in box A.1 above)
-\end{enumerate}
+\input{sections/A_papers.tex}
 
 \subsubsection*{A.1.d. Articles in refereed journals NOT listed by ISI Citation Indices (that is, not listed by SCI, SSCI or A\&HCI)}
-% Use same format as above.
- 
-\begin{enumerate}[i)]
-\item  {\bf Published} % (attach copies of each of the manuscripts – see v.1 in box A.1 above)
 
-\item  {\bf Accepted} % (attach copies of each of the manuscripts and the acceptance letters - see v.1. and v.2 in box A.1 above)
-\end{enumerate}
+\input{sections/A_papers_nonisi.tex}
 
 \subsubsection*{A.1.e. Chapters in books or monographs excluding conference proceedings}
-% Format: First Author, Second Author, "Title of chapter" in Title of book, Editors, Pages, Place of Publication, Publisher, Year.
-% Example: P. Bayar, “Historical Development of the Soviet Theory of Self-Regulation” in The Development of 
-% Self-Regulation Through Private Speech, (Edited by Gail Aiving). pp. 51-77, New York: John Wiley & Sons, 2014.
 
-\begin{enumerate}[i)]
-\item {\bf Published} % (attach copies of each of the manuscripts – see v.4. in box A.1 above)
-\end{enumerate}
+\input{sections/A_chapters.tex}
 
 \subsubsection*{A.1.f. Book reviews, theater reviews, editorials}
 
-% Format: First Author, etc., “Title of book reviewed,” Author(s) of book reviewed, Place, publisher, date, and total number of pages of the book reviewed, Title of Journal, Volume, No, Pages, Year.
-% Example: A. Tasar, "International Migration," by T. Mayer, Oxford: Oxford University Press, 390 pp., 2000, International Interactions, Vol. 28, No.8, 355-357, 2014                              
+\input{sections/A_reviews.tex}
+
 
 \subsubsection*{A.1.g. Reprints or Translations of Previous or Concurrent Publications}
 
-% Indicate reprints or translations of previously or concurrently published articles. These can be exact reprints, adaptations or translations which are now being republished in a book, volume, or a journal.  
-% Use the same format as a.-e. above.
+\input{sections/A_reprints.tex}
 
 \subsubsection*{A.1.h. Conference papers with proceedings (Do not enclose copies of these papers)}
 
-% List the papers that were presented at conferences and published in the proceedings. 
-% Format: First Author, Second Author, etc., “Title of Conference Paper” in the proceedings of the (conference name), 
-% Pages, City, Country, Date of conference.
-% Example: O. Aksu, M. Cardoza, “Distribution of Sequential Computations,” in the Proceedings of the Second 
-% International Symposium On Computer and Information Sciences, 226-239, Istanbul, Turkey, 19-21 October 2014.
+\input{sections/A_conf.tex}
 
 \subsection*{A.2. Scholarly Work in Progress (e.g. submitted, under revision)}
 % List work that is ongoing or has been submitted. Indicate the title of the work, author(s), intended journal or publisher and date of submission, if applicable.
+
+\input{sections/A_inprogress.tex}
 
 \subsection*{A.3. Citations Received in \LastYear ~to Previously Published Articles}
 % Attach printed citation index report. Obtain this report from ISI's Web of Science (See instructions at http://www.provost.bilkent.edu.tr/forms/AFS.htm.) 
@@ -191,20 +142,9 @@
 % Enclose documentation for citations in publications other than citation index journals.
 % Highlight or underline your own citations on the printed report.
 
-\subsubsection*{A.3.a. Citations to your scholarly work (articles, chapters, books, etc.) by others}
-% Make sure that you exclude the citations in conference proceedings that are listed in Conference Proceedings Citation Indices. That is, unclick the relevant boxes as indicated below: 
-
-\begin{enumerate}[i)]
-
-\item  Number of citations in citation index journals:	
-\item Number of citations in other publications (books, chapters):	
-
-\end{enumerate}
-
-\subsubsection*{A.3.b. Number of self citations:}
+\input{sections/A_citations.tex}
 
 \subsection*{A.4. Art Works, Competitions, Prizes}
-
 % BOX A.4.
 % i. List only the art works with Bilkent affiliation.  
 % ii. Report both the works that were exhibited and those that have been firmly scheduled, as documented by definite commitment letters from the organizers.  
@@ -217,6 +157,9 @@
 
 % Format: Type of exhibit, number of artists (solo, 2-person, group, etc.), title, starting and ending dates, the work was performed,  sponsoring institution/person/foundation (if applicable), curator (if applicable), city, country.
 % Example: Graphic design, Solo, “Studies in Space and Shape,” Sept. 2014, XYZ Exhibition Hall, ABC Foundation, Koln, Germany. 
+
+\input{sections/A_art.tex}
+
 
 \subsection*{A.5. Artistic Performances, Competitions, Prizes}
 
@@ -233,10 +176,15 @@
 % Format: Type of performance, title (if applicable), date(s), the work was performed, where and by whom reviewed (if applicable), city, country.
 % Example: Piano recital, March 30, 2014, XYZ Symphony Hall, Berlin, Germany.
 
+\input{sections/A_performances.tex}
+
+
 \subsection*{A.6. Published or aired reviews/critiques of art works or performances}
 % List your work or performance which was reviewed by respectable art, music, or theatre critics and appeared in art-related media or journals. Please attach the review and provide information about the art critic and the source.   
 % Format: “Title” of review, reviewer, reviewed work, source, date. 
 % Example:  “What Happened to Space?” H. Kroeber, critique of “Studies in Space and Shape” exhibit, Contemporary Arts, 21.05. 2014
+
+\input{sections/A_critiques.tex}
 
 \subsection*{A.7. Patents}
 % List patents received in your name.
@@ -244,38 +192,26 @@
 % Format: “Title,” country which issued the patent, patent number, date, co-owners of patent, if any.
 % Example: “Non-reciprocal Wave-Translating Device,” U.S.A., US Patent No. 3-452304, June, 2014.
 
+\input{sections/A_patents.tex}
+
+
 \subsection*{A.8. Seminars, Workshops and Lectures}
 % List the seminars, workshops and lectures given at other universities, companies, or organizations. Please indicate if you have received any monetary support from the organizing institution.
 
 % Format: “Seminar/Lecture Title,” date, place, monetary support, if any.
+
+\input{sections/A_seminars.tex}
 
 \subsection*{A.9. Presentations Given at Conferences}
 % List presentations given at conferences (which were not published).
 
 % Format: First presenter, etc., “Title of Presentation,” conference name, city, country, date of conference.
 
+\input{sections/A_conf_present.tex}
+
 \subsection*{A.10. Services to the Field (Academic or Arts)}
 % List the editorial and reviewing services you rendered to your academic or arts community and any offices held in scholarly and professional societies. 
-
-\subsubsection*{A.10.a. Editorships and Editorial Boards of Scholarly Journals}
-% List the services you rendered in an editorial capacity (e.g. editor, associate editor, managing editor, and the like.) of a scholarly or professional journal. Also include memberships and services as Editorial Reviewer on Editorial Boards.
-
-% Format: Date of appointment or election, date of termination (if applicable), editorial title, name of journal, publication sponsor.
-% Example: March 2014 - , Associate Editor, Computer Graphics, IEEE. 
-
-\subsubsection*{A.10.b. Refereeing for Scholarly and Professional Journals}
-% List the scholarly or professional journals for which you served as a referee.
-% Format: Date, Name of journal.
-
-\subsubsection*{A.10.c. Offices Held in Scholarly and Professional Societies}
-% List any offices held in scholarly and professional societies.
-% Format: Name of organization or society, title held, start date of appointment or election, expiration date (if in progress, indicate).
-
-\subsubsection*{A.10.d. Refereeing for Arts Events and Competitions}
-% List the services you rendered to the arts community in a refereeing and selection capacity (e.g. curator, juror for a competition, etc.). 
-
-% Format: Date of appointment or election, date of termination (if applicable), title, name of event/competition, sponsor/organizer.
-% Example: March – June 2014, Jury member for the International Youth Competition for Graphic Design, XYZ organization. 
+\input{sections/A_services.tex}
 
 \subsection*{A.11. Sponsored Research}
 % List any research activities sponsored by a body other than the University.
@@ -283,16 +219,22 @@
 % Format: “Title of project,” sponsoring agency or company, your duty, period, total amount of grant.
 % Example: “Conducting a Consumer Survey on Car Problems,” Marshal Motors Co., Principal Investigator, December 2004 - August 2014, US$10,000.
 
+\input{sections/A_sponsored.tex}
+
 \subsection*{A.12. Professional Awards and Honors}
+
 % List the academic honors and prizes; appointments to national and international academic boards, councils, or panels, academic degrees and other awards that are comparable indices of professional accomplishments that you received.
 
 % Format: Name of award or honor, awarding agency/organization/foundation, date, basis for the award.
 % Example: Science Award in Physics, TÜBITAK, 2014, scientific publications.
 
+
+\input{sections/A_awards.tex}
+
 \subsection*{A.13. Other Activities}
 % List any other research, scholarly and artistic activities not described elsewhere in this section.
 
-
+\input{sections/A_other.tex}
 
 \section*{B. TEACHING/ ADVISING/ INSTRUCTIONAL DEVELOPMENT ACTIVITIES}
 
@@ -300,75 +242,38 @@
 %  IN EVALUATING THE TEACHING PERFORMANCE OF FACULTY MEMBERS.
 
 \subsection*{B.1. Course(s) Offered in \the\year}
-% The online syllabi for courses you have taught provide valuable information about your teaching activities in 2014.  Please verify that this information is accurate and complete. 
 
-% Please ONLY submit information not covered in your online syllabi:
-%        Provide information on a) to c) below for each and every course taught in 2014. List a) to c) separately under each course.  
+\input{sections/B_courses.tex}
 
-% a)  List and briefly describe each and every assessment you used and its contribution to the course grade:
-% e.g. one open-book final exam including two short essay questions and one short case (25%  of the grade); 
- %      5 online quizzes - best five out of six (25%  of the grade); 
- %      2 cases analyzed and reported in groups of five (15%  of the grade); 
- %      1 project carried out and reported in groups of five (35%  of the grade) – formulating a strategic plan for an organization   and doing the necessary research and analysis as well as applying the course material for that purpose.
-
-% b) Did you teach this course for the first time or not?  
-% First time (new preparation) _______   		Taught previously______ 
-
-% c) If you offered this course previously, did you introduce and/or produce significantly NEW instructional material? If you did, describe briefly. 
-
-\begin{enumerate}
-  \item CS...
-    \begin{enumerate}[a)]
-    \item  List and briefly describe each and every assessment you used and its contribution to the course grade:
-    \item Did you teach this course for the first time or not? \\
-      First time (new preparation) \line(1,0){50}  ~~~Taught previously \line(1,0){50}
-    \item If you offered this course previously, did you introduce and/or produce significantly NEW instructional material? If you did, describe briefly. 
-    \end{enumerate}
-  \item CS...
-    \begin{enumerate}[a)]
-    \item  List and briefly describe each and every assessment you used and its contribution to the course grade:
-    \item Did you teach this course for the first time or not? \\
-      First time (new preparation) \line(1,0){50}  ~~~Taught previously \line(1,0){50}
-    \item If you offered this course previously, did you introduce and/or produce significantly NEW instructional material? If you did, describe briefly. 
-    \end{enumerate}
-  \item CS...
-    \begin{enumerate}[a)]
-    \item  List and briefly describe each and every assessment you used and its contribution to the course grade:
-    \item Did you teach this course for the first time or not? \\
-      First time (new preparation) \line(1,0){50}  ~~~Taught previously \line(1,0){50}
-    \item If you offered this course previously, did you introduce and/or produce significantly NEW instructional material? If you did, describe briefly. 
-    \end{enumerate}
-  \item CS...
-    \begin{enumerate}[a)]
-    \item  List and briefly describe each and every assessment you used and its contribution to the course grade:
-    \item Did you teach this course for the first time or not? \\
-      First time (new preparation) \line(1,0){50}  ~~~Taught previously \line(1,0){50}
-    \item If you offered this course previously, did you introduce and/or produce significantly NEW instructional material? If you did, describe briefly. 
-    \end{enumerate}
-\end{enumerate}
 
 \subsection*{B.2. New teaching approaches and methods}
 % Describe any new approaches and/or methods of teaching and assessment that you have used in the past year. What evidence do you have that this new approach was successful in enhancing student learning (e.g. results from student feedback, improved quality of student assignments and/or exam performance/improvement in student participation)?
+\input{sections/B_newapproach.tex}
 
-\paragraph{New instructional methods and/or approaches:}
-
-\paragraph{New assessment methods and/or approaches:}
 
 \subsection*{B.3. Educational development activities}
 % List any development activities related to your teaching that you have participated in or undertaken in the past year (e.g. workshops on   university teaching and learning, working with colleagues on improvement of teaching - for example, review of a colleague’s syllabus and course materials).
 
+\input{sections/B_development.tex}
+
 \subsection*{B.4. Student Contact Hours}
 %        Indicate the number of hours per week spent in class
+
+\input{sections/B_contact.tex}
 
 \subsection*{B.5. Undergraduate Student Industrial Training or Senior/Term Project Supervision}
 % List the students whom you supervised in 2014 and their project topics.
 
 % Format: Name of the student(s), project type (Industrial/Senior/Term/other), "Topic/Name of project", status (i.e. completed or in progress), date of completion (expected date if in progress).
 
+\input{sections/B_ugtraining.tex}
+
 \subsection*{B.6. Undergraduate Student Advising}
 % Indicate the number of students of whom you were the academic advisor during 2014.
 
 % Format: Total number of students, number of students grouped by year (e.g. 1st year - 15, 2nd year - 20), brief explanation of activities carried out. 
+
+\input{sections/B_ugadvising.tex}
 
 \subsection*{B.7. Graduate Student Supervision}
 % List the graduate students whom you supervised during the period and their research topics.
@@ -376,12 +281,18 @@
 % Format: Name of student, degree, “Title of thesis,” period of supervision, (expected) graduation date.
 % Example: Mark Kohlman, M.S., “Design and Implementation of Multi-purpose MCIS Machines,” September 2005 - June 2014, expected graduation 2014.
 
+\input{sections/B_gsupervision.tex}
+
+
 \subsection*{B.8. Students’ Accomplishments}
 % List awards, honors, publications, exhibits, performances and other noteworthy accomplishments of students you personally guided and supervised.
+
+\input{sections/B_stuaccomplish.tex}
 
 \subsection*{B.9. Other Teaching-Related Activities}
 % 	List any other teaching-related activities you were involved in at the department, Faculty, or university-wide level. 
 
+\input{sections/B_other.tex}
 
 \section*{C. SERVICES FOR THE DEPARTMENT / FACULTY / SCHOOL / UNIVERSITY}
 
@@ -389,28 +300,29 @@
 % Indicate the names of committees/work groups, responsibilities and activities undertaken, and whether completed or in progress.
 
 % Format: Name of the committee/group, duration (indicate if in progress), responsibilities and activities, brief explanation.
+\input{sections/C_committees.tex}
 
 \subsection*{C.2. Other Duties Assigned by the University or Activities Carried Out for the University}
 % List the duties/activities and whether completed or in progress.
 
 % Format: Name of duty/activity, duration (indicate if in progress), responsibilities and activities, brief explanation.
 
+\input{sections/C_duties.tex}
 
 \section*{D. SERVICES FOR THE COMMUNITY/SOCIETY}
 % 	   List any service rendered and whether completed or in progress. 
 
+\input{sections/D_services.tex}
 
 \section*{E. SELF-ASSESSMENT AND FUTURE GOALS}
 
-1. Evaluate your performance and achievements in the past year vis á vis your own goals. 
-
-2. Describe your goals pertaining to your work and your contributions to your department and the university in the next two years. 
-
+\input{sections/E_self.tex}
 
 \section*{F. COMMENTS}
 
 % Indicate any comments, criticisms, suggestions, etc. concerning your department, faculty/school and university.
 
+\input{sections/F_comments.tex}
 
 
 \begin{center}
@@ -419,7 +331,7 @@
 {\large\textbf {\textit {Suggestions for Improvements to This Form}}}
 % Describe any changes to this form which you feel would improve its evaluative sensitivity and effectiveness.
 
-
+\input{sections/suggestions.tex}
 
 \clearpage
 
@@ -427,73 +339,45 @@
 % Please list below your scholarly publications in languages other than English. 
 
 \subsubsection*{G.1.a. Books, textbooks, scholarly monographs written by the faculty member}
-% Format: Author, Co-authors, if applicable, Title of Book, Number of pages, Place of Publication, Publisher, Year.
-% Example: F. Mann, The Social Role of the Person of Knowledge, 196 pp., Lexington, MA: Lexington Books, 2014.
 
-\begin{enumerate}[i)]
-\item {\bf Published}  % (attach a copy of the cover and contents pages of each manuscript – see v.4 in box A.1 above)
-\end{enumerate}
+\input{sections/G_books.tex}
 
 \subsubsection*{G.1.b. Volumes (books, anthologies, collections, bibliographies) edited by the faculty member (excluding conference proceedings)}
 
-% Format: First Editor, Second Editor, Title of Edited Book,  Number of pages, Place of Publication, Publisher, Year.
-% Example: C.O. Smith, M. Aktan, Current Research in Microbial Ecology, 345 pp., San Francisco: American Association for Microbial Ecology, 2014. 
-
-\begin{enumerate}[i)]
-\item {\bf Published}  % (attach a copy of the cover and contents pages of each manuscript – see v.4 in box A.1 above)
-\end{enumerate}
-
+\input{sections/G_volumes.tex}
 
 
 \subsubsection*{G.1.c. Articles in refereed journals listed by ISI Citation Indices (SCI, SSCI, A\&HCI)}
-% Please refer to http://www.bilkent.edu.tr/~provost/jourlist/journal.htm for the impact factors and half lives of the ISI journals.
 
-% Format: First Author, Second Author, Third Author, etc., “Title of article,” Title of Journal, Volume, No, Pages, Year.
-% Example: I.W. Jones, L. Corwin, “Correlation in Power Residue Generated Random Numbers,” Journal of Computational 
-% 	Physics, vol. 12, no. 6, 373-382, 2014.
-
-\begin{enumerate}[i)]
-\item {\bf Published} % (attach copies of each of the manuscripts – see v.1 in box A.1 above)
-
-\item {\bf Accepted} % (attach copies of each of the manuscripts and the acceptance letters - see v.1 and v.2 in box A.1 above)
-\end{enumerate}
+\input{sections/G_papers.tex}
 
 \subsubsection*{G.1.d. Articles in refereed journals NOT listed by ISI Citation Indices (that is, not listed by SCI, SSCI or A\&HCI)}
-% Use same format as above.
- 
-\begin{enumerate}[i)]
-\item  {\bf Published} % (attach copies of each of the manuscripts – see v.1 in box A.1 above)
 
-\item  {\bf Accepted} % (attach copies of each of the manuscripts and the acceptance letters - see v.1. and v.2 in box A.1 above)
-\end{enumerate}
+\input{sections/G_papers_nonisi.tex}
 
 \subsubsection*{G.1.e. Chapters in books or monographs excluding conference proceedings}
-% Format: First Author, Second Author, "Title of chapter" in Title of book, Editors, Pages, Place of Publication, Publisher, Year.
-% Example: P. Bayar, “Historical Development of the Soviet Theory of Self-Regulation” in The Development of 
-% Self-Regulation Through Private Speech, (Edited by Gail Aiving). pp. 51-77, New York: John Wiley & Sons, 2014.
 
-\begin{enumerate}[i)]
-\item {\bf Published} % (attach copies of each of the manuscripts – see v.4. in box A.1 above)
-\end{enumerate}
-
+\input{sections/G_chapters.tex}
 
 \subsubsection*{G.1.f. Book reviews, theater reviews, editorials}
-% Format: First Author, etc., “Title of book reviewed,” Author(s) of book reviewed, Place, publisher, date, and total number of pages of the book reviewed, Title of Journal, Volume, No, Pages, Year.
-% Example: A. Tasar, "International Migration," by T. Mayer, Oxford: Oxford University Press, 390 pp., 2000, International Interactions, Vol. 28, No.8, 355-357, 2014.                              
+
+\input{sections/G_reviews.tex}
+
 
 \subsubsection*{G.1.g. Reprints or Translations of Previous or Concurrent Publications}
-% Indicate reprints or translations of previously or concurrently published articles. These can be exact reprints, adaptations or translations which are now being republished in a book, volume, or a journal.  
-% Use the same format as a.-e. above.
+
+\input{sections/G_reprints.tex}
 
 \subsubsection*{G.1.h. Conference papers with proceedings (Do not enclose copies of these papers)}
-% List the papers that were presented at conferences and published in the proceedings. 
-% Format: First Author, Second Author, etc., “Title of Conference Paper” in the proceedings of the (conference name), 
-% Pages, City, Country, Date of conference.
-% Example: O. Aksu, M. Cardoza, “Distribution of Sequential Computations,” in the Proceedings of the Second 
-% International Symposium On Computer and Information Sciences, 226-239, Istanbul, Turkey, 19-21 October 2014.
+
+\input{sections/G_conf.tex}
 
 \subsection*{G.2. Scholarly Work in Progress (e.g. submitted, under revision)}
 % List work that is ongoing or has been submitted. Indicate the title of the work, author(s), intended journal or publisher and date of submission, if applicable.
+
+\input{sections/G_inprogress.tex}
+
+
 
 
 
