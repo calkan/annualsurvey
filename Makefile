@@ -11,5 +11,5 @@ all: $(TEX) $(FIGS) citemarker.c
 	gcc citemarker-tex.c -o citemarker-tex -O2
 
 clean:
-	rm -rf *.dvi *.log *.aux *.bbl *.blg *.pdf citemarker
+	rm -rf *.dvi *.log *.aux *.bbl *.blg *.pdf citemarker citemarker-tex *~
 
