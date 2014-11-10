@@ -14,6 +14,9 @@ int main(int argc, char **argv){
   char **mypubs;
   int i;
   int pubcnt=0;
+  int selfcnt=0;
+  int isself=0;
+  int selfcite=0;
   int prevfound=0;
   char prevti[5000];
   int citeret;
@@ -92,7 +95,10 @@ int main(int argc, char **argv){
 
       //fprintf(stdout, "field : %s\n", field);
     }
-    
+    else{
+      if (wasau)
+	if (strstr(line, "Alkan")) {isself=1;}
+    }
 
     if (strstr(line, "Thomson Reuters Web of Science"))
       continue;
@@ -144,6 +150,7 @@ int main(int argc, char **argv){
 	  printf("CR {\\bf **{\\textit{%s}}**}\\\\\n", line+3);
 	  //printf("CR >>>> %s <<<<\n", line+3);
 	  markedcite++;
+	  if (isself) selfcite++;
 	}
 	else
 	  printf("CR %s\\\\\n", line+3);
@@ -164,6 +171,7 @@ int main(int argc, char **argv){
 	  printf("{\\bf **{\\textit{%s}}**}\\\\\n", line);
 	  //printf(">>>> %s <<<<\n", line);
 	  markedcite++;
+	  if (isself) selfcite++;
 	}
 	else
 	  printf("%s\\\\\n", line);
@@ -180,11 +188,12 @@ int main(int argc, char **argv){
     }
     
     if (!strcmp(field, "AU")){
-      wasau=1;
+      if (strstr(line, "Alkan")) {selfcnt++; isself=1;}
       if (line[0]!=' ')
 	printf("%s; ", line);
       else
 	printf("%s; ", line+3);
+      wasau=1;
       continue;
     }
     
@@ -192,7 +201,7 @@ int main(int argc, char **argv){
       strcpy(prevti, line);
     
     if (!strcmp(field, "PT")){
-      records++;
+      records++; isself=0;
       printf("\n\\noindent ");
       if (records!=1 && prevfound == 0){
 	fprintf(stderr, "******\n");
@@ -230,8 +239,10 @@ int main(int argc, char **argv){
     }*/
 
   }
-  fprintf (stderr,"Done with %d records and total %d citations.\n", records, markedcite);
+
   printf("\n\n}\n\\end{multicols}\n\\end{document}\n\n");
+
+  fprintf (stderr,"Done with %d records and total %d citations. Self papers: %d, citations: %d\n", records, markedcite, selfcnt, selfcite);
 }
 
 
