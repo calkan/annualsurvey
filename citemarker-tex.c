@@ -73,7 +73,7 @@ int main(int argc, char **argv){
   printf("\\newenvironment{closeenumerate}\n               {\\begin{list}\n                   {\\arabic{enumi}.}\n                   {\\topsep=0in\\itemsep=0in\\parsep=0in\\usecounter{enumi}}}\n               {\\end{list}}\n\\newenvironment{closeitemize}\n               {\\begin{itemize}\n                    \\setlength{\\itemsep}{0pt}\n                   \\setlength{\\parskip}{0pt}}\n                {\\end{itemize}}\n");
   printf("\\def\\CR{\\hspace{0pt}} \n\\begin{document}\n\\begin{multicols}{%d}\n", num_columns);
 
-  printf("\\section*{Citation Report}\n Citations to my papers are written in bold italics.\n\n");
+  printf("\\section*{Citation Report}\n Citations to my papers are written in bold italics. All other citations are removed to preserve space.\n\n");
 
   printf("\\tiny\n");
 
@@ -152,7 +152,7 @@ int main(int argc, char **argv){
 	  markedcite++;
 	  if (isself) selfcite++;
 	}
-	else
+	else if (!prevfound)
 	  fprintf(stderr, "CR %s\\\\\n", line+3);
 	continue;
       }
@@ -173,7 +173,7 @@ int main(int argc, char **argv){
 	  markedcite++;
 	  if (isself) selfcite++;
 	}
-	else
+	else if (!prevfound)
 	  fprintf(stderr, "%s\\\\\n", line);
 	continue;
       }
@@ -240,7 +240,9 @@ int main(int argc, char **argv){
 
   }
 
-  printf("\n\n}\n\\end{multicols}\n\\end{document}\n\n");
+  printf ("\n\n\nDone with %d records and total %d citations. Self papers: %d, citations: %d\n", records, markedcite, selfcnt, selfcite);
+  printf("\n\\end{multicols}\n");
+  printf("\\end{document}\n\n");
 
   fprintf (stderr,"Done with %d records and total %d citations. Self papers: %d, citations: %d\n", records, markedcite, selfcnt, selfcite);
 }
