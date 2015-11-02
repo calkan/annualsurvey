@@ -153,7 +153,7 @@ int main(int argc, char **argv){
 	  if (isself) selfcite++;
 	}
 	else
-	  printf("CR %s\\\\\n", line+3);
+	  fprintf(stderr, "CR %s\\\\\n", line+3);
 	continue;
       }
    
@@ -174,7 +174,7 @@ int main(int argc, char **argv){
 	  if (isself) selfcite++;
 	}
 	else
-	  printf("%s\\\\\n", line);
+	  fprintf(stderr, "%s\\\\\n", line);
 	continue;
       }
 
