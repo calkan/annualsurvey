@@ -4,7 +4,7 @@ PAPER = survey
 TEX = $(wildcard ./*.tex) 
 
 .PHONY: all, clean
-all: $(TEX) $(FIGS) citemarker.c
+all: $(TEX) $(FIGS) citemarker.c citemarker-tex.c
 	pdflatex $(PAPER) 
 	pdflatex $(PAPER)
 	gcc citemarker.c -o citemarker -O2
